@@ -11,9 +11,11 @@ export default ({title, items}) => {
             <div key={key} className="movieRow--item">
               <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
             </div>
+             // vamos en la hora 1:00:0
         ))}
         </div>
       </div>
     </div>
   );
 }
+

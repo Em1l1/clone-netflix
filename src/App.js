@@ -9,7 +9,7 @@ export default () => {
 
   useEffect(()=>{
    const loadAll = async ()  => {
-      // Pegando la lista total
+      // Agreando lista total
       let list = await Tmdb.getHomeList();
       setMovieList(list);
     }
