@@ -2,6 +2,13 @@ import React from 'react';
 import './FeaturedMovie.css';
 
 export default ({item}) => {
+  console.log(item);
+  let firstDate = new Date(item.first_air_date);
+  let genres = [];
+  for(let i in item.genres) {
+    genres.push( item.genres[i].name );
+  }
+
   return (
     <section 
       className="featured"
@@ -12,7 +19,7 @@ export default ({item}) => {
       }}
     >
       <div className="featured--vertical">
-        <div className="featured--horizontal">
+        <div className="featured--horizontal"> 
           <div className="featured--name">
             {item.original_name}
           </div>
@@ -21,7 +28,7 @@ export default ({item}) => {
               {item.vote_average} points
             </div>
             <div className="featured--year">
-              2099 year
+              {firstDate.getFullYear()}
             </div>
             <div className="featured--seasons">
               {item.number_of_seasons} season{item.number_of_seasons !== 1 ? 's' : ''}
@@ -29,8 +36,12 @@ export default ({item}) => {
           </div>
           <div className="featured--description">
             {item.overview}
-            {/* vamos en 📺1:44:18 */}
           </div>
+          <div className="featured--buttons">
+            <a href={`/watch/${item.id}`} className="featured--watchbutton">|>Assistir </a>
+            <a href={`list/add/${item.id}`} className="featured--mylistbutton">+ My List</a>
+          </div>
+          <div className="featured--genres"><strong>Generos: </strong> {genres.join(', ')} </div>
         </div>
       </div>
     </section>

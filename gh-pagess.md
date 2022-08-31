@@ -28,5 +28,5 @@ package.json
 deploy a github pages
 
 ```sh
-npm run build
+npm run deploy
 ```
