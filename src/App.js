@@ -63,6 +63,11 @@ export default () => {
         Especial imagen by Netflix<br/>
         The site Themoviedb.org
       </footer>
+      {movieList.length <= 0 && 
+      <div className="loading">
+        <img src="https://pa1.narvii.com/6704/4b3f34a861c9ac5d902b8cb24ddf302e26616bea_hq.gif" alt="loading" />
+      </div>
+      }
     </div>
   );
 }

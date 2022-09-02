@@ -23,7 +23,7 @@ export default {
     return [
       {
         slug: 'originals',
-        title: 'originals de Netflix',
+        title: 'Originals de Netflix',
         items: await basicFetch(`/discover/tv?with_network=123&language=pt-EN&api_key=${API_KEY}`)
       },
       {

@@ -5,8 +5,14 @@ export default ({item}) => {
   console.log(item);
   let firstDate = new Date(item.first_air_date);
   let genres = [];
+
   for(let i in item.genres) {
     genres.push( item.genres[i].name );
+  }
+
+  let description = item.overview;
+  if(description.length > 200) {
+    description = description.substring(0, 200) + '...';
   }
 
   return (
@@ -35,10 +41,10 @@ export default ({item}) => {
             </div>
           </div>
           <div className="featured--description">
-            {item.overview}
+            {description}
           </div>
           <div className="featured--buttons">
-            <a href={`/watch/${item.id}`} className="featured--watchbutton">|>Assistir </a>
+            <a href={`/watch/${item.id}`} className="featured--watchbutton"> ▶️ Assistir </a>
             <a href={`list/add/${item.id}`} className="featured--mylistbutton">+ My List</a>
           </div>
           <div className="featured--genres"><strong>Generos: </strong> {genres.join(', ')} </div>
